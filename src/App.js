@@ -22,39 +22,18 @@ function App() {
       }
       return 0;
     });
-    return nameArray;
+    return setSortName(nameArray);
   };
 
-  const handleName = () => {
-    const name = nameSort();
-    setSortName(
-      name.map((data) => {
-        return (
-          <>
-            <div className="product_product">
-              <img src={data.image} />
-              <div className="product_info">
-                <p className="product_title">{data.name}</p>
-                <span
-                  className={data.online !== true ? "dot" : "dot_Onl"}
-                ></span>
-                <div className="product_description">{data.description}</div>
-                <p className="product_small_description">
-                  <small>{data.tags}</small>
-                  <small>Delivery: $ {data.delivery_price}</small>
-                </p>
-              </div>
-            </div>
-          </>
-        );
-      })
-    );
-  };
+  // const handleName = () => {
+  //   const name = nameSort();
+  //   setSortName(name);
+  // };
 
   return (
     <>
       <div className="app">
-        <button onClick={handleName}>Sort</button>
+        <button onClick={nameSort}>Sort</button>
         <input
           type="text"
           placeholder="Search..."
